@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <%- include('./partials/Header'); %>
+    </header>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <table>
+            <tr>
+                <th>S/N</th>
+                <th>Task</th>
+                <th>Status</th>
+            </tr>
+            <% todos.forEach((todo)=>{ %>
+                <tr>
+                    <td><%= todo._id %></td>
+                    <td><%= todo.type %></td>
+                    <td><%= todo.status %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+</body>
+</html>
